@@ -15,6 +15,7 @@ get '/auth/:provider/callback' do
   provider_data = request.env['omniauth.auth'].to_hash.inspect rescue "No Data"
   session[:oauth_token] = request.env['omniauth.auth'].to_hash['extra']['access_token'].token
   session[:secret_oauth_token] = request.env['omniauth.auth'].to_hash['extra']['access_token'].secret
+  session[:name] = request.env['omniauth.auth'].to_hash['info']['name']
   redirect '/'
 end
 

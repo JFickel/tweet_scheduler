@@ -1,5 +1,8 @@
 <h2 class="tweet_status"></h2>
 
+
+<h4>You are logged in as <%= session[:name] %> :3 <h4>
+
 <form method="post" action="/tweets">
   <textarea rows="4" cols="28" type="text" name="tweet" placeholder="Twitter message goes here"></textarea><br>
   <input type="submit" value="Post Tweet">
