@@ -14,6 +14,8 @@ gem 'thin'
 #modified skeleton
 gem 'debugger'
 gem 'twitter'
+gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
+
 
 gem 'activesupport'
 gem 'activerecord'

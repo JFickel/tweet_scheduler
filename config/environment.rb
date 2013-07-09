@@ -17,6 +17,9 @@ require 'logger'
 
 require 'twitter'
 require 'debugger'
+require 'omniauth'
+require 'omniauth-twitter'
+
 
 require 'sinatra'
 require "sinatra/reloader" if development?
@@ -40,4 +43,11 @@ Twitter.configure do |config|
   config.consumer_secret = "BSMah5siEocr7p7doloiDbBZQfNZBamMV7dUog6Hs"
   config.oauth_token = "864007722-T8UUdEOk1XndTfDN1MhhWoo1XIRbJTEu9TdHt07R"
   config.oauth_token_secret = "ibwNozdELuZI0iZCI4IZ6F1OvxfvFFW6trUzQNdX5gU"
+end
+
+use OmniAuth::Builder do
+  # For additional provider examples please look at 'omni_auth.rb'
+  # provider :google_oauth2, '631878338394.apps.googleusercontent.com', 'sterRGO4MJHBiqyLXbT0eart', {}
+  # provider :twitch_oauth2, 'kwh498lg2c4p659yx8ng713d00q3rjp', 'ks6u1x5w2g69zk8txwjzyi1s407dqzu', {scope: "user_read user_blocks_edit user_blocks_read user_follows_edit channel_read channel_editor channel_commercial channel_stream channel_subscriptions channel_check_subscription chat_login"}
+  provider :twitter, 'B9PTuH7PuQVwQt5qSlexA', 'BSMah5siEocr7p7doloiDbBZQfNZBamMV7dUog6Hs'
 end
