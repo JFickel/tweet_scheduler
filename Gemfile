@@ -10,13 +10,17 @@ gem 'sinatra-contrib'
 # Use Thin for our web server
 gem 'thin'
 
+
+#modified skeleton
+gem 'debugger'
+gem 'twitter'
+
 gem 'activesupport'
 gem 'activerecord'
 
 gem 'rake'
 
 gem 'shotgun'
-gem 'twitter'
 
 group :test do
   gem 'faker'

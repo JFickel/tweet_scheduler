@@ -15,6 +15,9 @@ require 'pg'
 require 'active_record'
 require 'logger'
 
+require 'twitter'
+require 'debugger'
+
 require 'sinatra'
 require "sinatra/reloader" if development?
 require 'twitter'
@@ -33,8 +36,8 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 require APP_ROOT.join('config', 'database')
 
 Twitter.configure do |config|
-  config.consumer_key = "zpD4cFLmmTCdPcMLwnrraA"
-  config.consumer_secret = "Jhp37iy9PRHFIo8iA3GJ8sgi5RRsTFWWqTAuKVX7o"
-  config.oauth_token = "77966392-h7p9p8p8N8rFH7gPPDzKr9ONQYeOoCDyzc86HWMyU"
-  config.oauth_token_secret = "p9lp0kukY6RoOxJWKkna1s3qnvIpVPs2PfOv3OljA"
+  config.consumer_key = "B9PTuH7PuQVwQt5qSlexA"
+  config.consumer_secret = "BSMah5siEocr7p7doloiDbBZQfNZBamMV7dUog6Hs"
+  config.oauth_token = "864007722-T8UUdEOk1XndTfDN1MhhWoo1XIRbJTEu9TdHt07R"
+  config.oauth_token_secret = "ibwNozdELuZI0iZCI4IZ6F1OvxfvFFW6trUzQNdX5gU"
 end
