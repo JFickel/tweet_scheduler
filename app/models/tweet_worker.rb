@@ -2,7 +2,6 @@ class TweetWorker < ActiveRecord::Base
   include Sidekiq::Worker
 
   def perform(tweet_id)
-    puts "DOING SOME HARD WORK"
     tweet = Tweet.find(tweet_id)
     user  = tweet.user
 
@@ -12,7 +11,6 @@ class TweetWorker < ActiveRecord::Base
       :oauth_token_secret => user.oauth_secret
     )
     client.update(tweet.content)
-    puts "ALL DONE!"
     # set up Twitter OAuth client here
     # actually make API call
     # Note: this does not have access to controller/view helpers

@@ -56,9 +56,10 @@ use OmniAuth::Builder do
 end
 
 Sidekiq.configure_server do |config|
-  config.redis = { :url => 'redis://redistogo:1fa9cd6a12448f46e09e9bcff87e2c46@beardfish.redistogo.com:9626/', :namespace => 'redis_config_server' }
+  config.redis = { :url => ENV['REDISTOGO_URL'], :namespace => 'redis_config_server' }
 end
 
 Sidekiq.configure_client do |config|
-  config.redis = { :url => 'redis://redistogo:1fa9cd6a12448f46e09e9bcff87e2c46@beardfish.redistogo.com:9626/', :namespace => 'redis_config_client' }
+  config.redis = { :url => ENV['REDISTOGO_URL'], :namespace => 'redis_config_client' }
 end
+
