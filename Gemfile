@@ -16,6 +16,10 @@ gem 'debugger'
 gem 'twitter'
 gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
 
+#sidekiq
+gem 'sidekiq'
+gem 'redis'
+
 
 gem 'activesupport'
 gem 'activerecord'

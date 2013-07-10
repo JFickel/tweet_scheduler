@@ -20,6 +20,9 @@ require 'debugger'
 require 'omniauth'
 require 'omniauth-twitter'
 
+require 'sidekiq'
+require 'redis'
+
 
 require 'sinatra'
 require "sinatra/reloader" if development?
