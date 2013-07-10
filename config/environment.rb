@@ -54,3 +54,11 @@ use OmniAuth::Builder do
   # provider :twitch_oauth2, 'kwh498lg2c4p659yx8ng713d00q3rjp', 'ks6u1x5w2g69zk8txwjzyi1s407dqzu', {scope: "user_read user_blocks_edit user_blocks_read user_follows_edit channel_read channel_editor channel_commercial channel_stream channel_subscriptions channel_check_subscription chat_login"}
   provider :twitter, 'B9PTuH7PuQVwQt5qSlexA', 'BSMah5siEocr7p7doloiDbBZQfNZBamMV7dUog6Hs'
 end
+
+Sidekiq.configure_server do |config|
+  config.redis = { :url => 'redis://redistogo:1fa9cd6a12448f46e09e9bcff87e2c46@beardfish.redistogo.com:9626/', :namespace => 'redis_config_server' }
+end
+
+Sidekiq.configure_client do |config|
+  config.redis = { :url => 'redis://redistogo:1fa9cd6a12448f46e09e9bcff87e2c46@beardfish.redistogo.com:9626/', :namespace => 'redis_config_client' }
+end
